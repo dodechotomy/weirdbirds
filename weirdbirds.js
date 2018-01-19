@@ -14,7 +14,7 @@ const generator = new Improv(grammarData, {
 
 const model = {};
 // Generate text and print it out
-var bird = {text: generator.gen('root', model)};
+var bird =generator.gen('root', model);
 console.log(bird);
 
 //  console.log(model);
@@ -38,4 +38,4 @@ var Twitter = require('twitter-node-client').Twitter;
 
 var config = process.env;
 var twitter = new Twitter(config);
-twitter.postTweet(bird, error, success);
+twitter.postTweet( {"status": bird}, error, success);
