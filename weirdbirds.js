@@ -23,6 +23,7 @@ console.log(bird);
 //Callback functions
 var error = function(err, response, body) {
     console.log('ERROR [%s]', err);
+        console.log(body);
 };
 var success = function(data) {
     console.log('Data [%s]', data);
