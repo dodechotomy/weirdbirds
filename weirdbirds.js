@@ -14,7 +14,7 @@ const generator = new Improv(grammarData, {
 
 const model = {};
 // Generate text and print it out
-var bird =generator.gen('root', model);
+var bird = generator.gen('root', model);
 console.log(bird);
 
 //  console.log(model);
@@ -29,13 +29,17 @@ var success = function(data) {
     console.log('Data [%s]', data);
 };
 
-var Twitter = require('twitter-node-client').Twitter;
+var Twitter = require('twitter');
 
-
-// make a directory in the root folder of your project called data
-// copy the node_modules/twitter-node-client/twitter_config file over into data/twitter_config`
-// Open `data/twitter_config` and supply your applications `consumerKey`, 'consumerSecret', 'accessToken', 'accessTokenSecret', 'callBackUrl' to the appropriate fields in your data/twitter_config file
-
-var config = process.env;
-var twitter = new Twitter(config);
-twitter.postTweet( {"status": bird}, error, success);
+var config = {
+  consumer_key: process.env.consumerKey,
+  consumer_secret: process.env.consumerSecret,
+  access_token_key: process.env.accessToken,
+  access_token_secret: process.env.accessTokenSecret
+};
+var client = new Twitter(config);
+client.post('statuses/update', {status: bird},  function(error, tweet, response) {
+  if(error) throw error;
+  console.log(tweet);  // Tweet body.
+  console.log(response);  // Raw response object.
+});
