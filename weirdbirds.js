@@ -14,7 +14,7 @@ const generator = new Improv(grammarData, {
 
 const model = {};
 // Generate text and print it out
-var bird = generator.gen('root', model);
+var bird = {text: generator.gen('root', model)};
 console.log(bird);
 
 //  console.log(model);
@@ -23,7 +23,7 @@ console.log(bird);
 //Callback functions
 var error = function(err, response, body) {
     console.log('ERROR [%s]', err);
-        console.log(body);
+    console.log(body);
 };
 var success = function(data) {
     console.log('Data [%s]', data);
