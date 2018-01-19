@@ -1,0 +1,265 @@
+      root:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "Have you heard of the [:name]? It [:is] [a :description]."
+              - "My favourite pet [:is] [a :name]. It [:is] [a :description]."
+          -
+            tages:
+              - ['tense', 'present']
+            phrases:
+              - "I've made a new discovery in [:location]! It's [a :description]. I'll call it the [:name]!"
+          -
+            tags:
+              - ['tense', 'past']
+            phrases:
+              - "I once came across a most interesting bird. It [:is] [a :name], [a :description]."
+              - "I heard a legend of [a :description]. They say it still roams [:location]."
+              - "When I was young I swore I saw [a :description]. It haunts me to this day."
+      description:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "[:descriptor] bird with [:features] found in [:location]"
+              - "[:descriptor] and [:descriptor] bird with [:features]"
+              - "bird with [:features]"
+      is:
+        groups:
+          -
+            tags:
+              - ['tense', 'past']
+            phrases:
+              - "was"
+          -
+            tags:
+              - ['tense', 'present']
+            phrases:
+              - "is"
+      prefix:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "spotted"
+              - "greater"
+              - "lesser"
+              - "common"
+              - "arctic"
+              - "tundra"
+      name:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "[cap :prefix] [cap :namepart][:namepart][:namepart]"
+              - "[cap :prefix] [cap :namepart][:namepart]"
+      namepart:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "ox"
+              - "cor"
+              - "waz"
+              - "fin"
+              - "tit"
+              - "woop"
+              - "whip"
+              - "roc"
+              - "par"
+              - "ki"
+              - "wi"
+              - "ka"
+              - "pec"
+              - "ker"
+              - "her"
+              - "rigar"
+              - "bud"
+              - "gi"
+              - "geon"
+              - "row"
+              - "spar"
+              - "hum"
+              - "koo"
+              - "bur"
+              - "ra"
+              - "do"
+              - "pid"
+      descriptor:
+        groups:
+          -
+            tags:
+              - ['type', 'flightless']
+            phrases:
+              - "flightless"
+          -
+            tags:
+              - []
+            phrases:
+              - "nocturnal"
+              - "carnivorous"
+              - "extinct"
+              - "delicious"
+              - "almost useless"
+              - "silly"
+              - "pointless"
+              - "ridiculous"
+              - "fearsome"
+              - "viscious"
+              - "respected"
+              - "stealthy"
+              - "silent"
+              - "scavenging"
+              - "murderous"
+              - "annoying"
+      features:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "[:feature]"
+              - "[:feature] and [:feature]"
+              - "[:feature], [:feature], and [:feature]"
+      feature:
+        groups:
+          -
+            tags:
+              - ['type', 'flighted']
+            phrases:
+              - "[#2-12] [:wingdescriptor] wings"
+              - "many [:wingdescriptor] wings"
+              - "a bunch of [:wingdescriptor] wings"
+          -
+            tags:
+              - []
+            phrases:
+              - "[a :beakdescriptor] beak"
+              - "a beak that could be described as [:beakdescriptor]"
+          -
+            tags:
+              - []
+            phrases:
+              - "[:talondescriptor] talons"
+              - "[:talondescriptor] claws"
+              - "[:talondescriptor] teeth"
+              - "[:talondescriptor] horns"
+              - "[:talondescriptor] tusks"
+          -
+            tags:
+              - []
+            phrases:
+              - "[a :sounddescriptor] [:sound]"
+          -
+            tags:
+              - []
+            phrases:
+              - "no dignity"
+              - "writhing [:wingdescriptor] tentacles"
+
+      sound:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "song"
+              - "cry"
+              - "call"
+              - "screech"
+              - "warble"
+      beakdescriptor:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "hooked"
+              - "[:talondescriptor]"
+              - "[:wingdescriptor]"
+      talondescriptor:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "sharp"
+              - "long"
+              - "pointed"
+              - "dull"
+              - "razor sharp"
+              - "curved"
+              - "hooked"
+              - "poisonous"
+              - "venomous"
+              - "bent"
+      sounddescriptor:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "sharp"
+              - "incessant"
+              - "loud"
+              - "quiet"
+              - "lovely"
+              - "peaceful"
+              - "piercing"
+              - "high pitched"
+              - "low pitched"
+              - "rumbling"
+              - "too human"
+              - "terrifying"
+              - "mimicking"
+              - "ungodly"
+              - "all too familiar"
+      wingdescriptor:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "enormous"
+              - "moist"
+              - "irridescent"
+              - "striped"
+              - "dappled"
+              - "spotted"
+              - "black"
+              - "white"
+              - "orange"
+              - "purple"
+              - "blue"
+              - "red"
+              - "multicoloured"
+              - "green"
+              - "grey"
+              - "pink"
+      location:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "South America"
+              - "North America"
+              - "Asia"
+              - "Australia"
+              - "Africa"
+              - "Europe"
+              - "the forest"
+              - "the jungle"
+              - "the plains"
+          -
+            tags:
+              - ['type', 'flighted']
+            phrases:
+              - "the sky"
