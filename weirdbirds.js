@@ -35,5 +35,6 @@ var Twitter = require('twitter-node-client').Twitter;
 // copy the node_modules/twitter-node-client/twitter_config file over into data/twitter_config`
 // Open `data/twitter_config` and supply your applications `consumerKey`, 'consumerSecret', 'accessToken', 'accessTokenSecret', 'callBackUrl' to the appropriate fields in your data/twitter_config file
 
-var twitter = new Twitter();
+var config = process.env;
+var twitter = new Twitter(config);
 twitter.postTweet(bird, error, success);
