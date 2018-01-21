@@ -128,7 +128,7 @@
               - "[:feature]"
               - "[:feature] and [:feature]"
               - "[:feature], [:feature], and [:feature]"
-      feature:
+      wings:
         groups:
           -
             tags:
@@ -136,32 +136,70 @@
             phrases:
               - "[#2-12] [:wingdescriptor] wings"
               - "many [:wingdescriptor] wings"
-              - "a bunch of [:wingdescriptor] wings"
+      beak:
+        groups:
           -
             tags:
               - []
             phrases:
               - "[a :beakdescriptor] beak"
-              - "a beak that could be described as [:beakdescriptor]"
+      talons:
+        groups:
           -
             tags:
-              - []
+              - ['talons', 'talons']
             phrases:
               - "[:talondescriptor] talons"
-              - "[:talondescriptor] claws"
-              - "[:talondescriptor] teeth"
-              - "[:talondescriptor] horns"
-              - "[:talondescriptor] tusks"
+      claws:
+        groups:
           -
             tags:
-              - []
+              - ['talons', 'talons']
+            phrases:
+              - "[:talondescriptor] claws"
+      teeth:
+        groups:
+          -
+            tags:
+              - ['talons', 'talons']
+            phrases:
+              - "[:talondescriptor] teeth"
+      horns:
+        groups:
+          -
+            tags:
+              - ['talons', 'talons']
+            phrases:
+              - "[:talondescriptor] horns"
+      tusks:
+        groups:
+          -
+            tags:
+              - ['talons', 'talons']
+            phrases:
+              - "[:talondescriptor] tusks"
+      call:
+        groups:
+          -
+            tags:
+              - ['sound', 'sound']
             phrases:
               - "[a :sounddescriptor] [:sound]"
+      feature:
+        groups:
           -
             tags:
               - []
             phrases:
               - "no dignity"
+              - "a piercing glare"
+      tentacles:
+        groups:
+          -
+            tags:
+              - ['tentacles', 'tentacles']
+              - ['weird', 'weird']
+            phrases:
               - "writhing [:wingdescriptor] tentacles"
 
       sound:
@@ -249,15 +287,13 @@
             tags:
               - []
             phrases:
-              - "South America"
-              - "North America"
-              - "Asia"
-              - "Australia"
-              - "Africa"
-              - "Europe"
               - "the forest"
               - "the jungle"
               - "the plains"
+              - "the tundra"
+              - "the mountains"
+              - "the hills"
+              - "the seas"
           -
             tags:
               - ['type', 'flighted']
