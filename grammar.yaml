@@ -11,6 +11,7 @@
               - ['tense', 'present']
             phrases:
               - "I've made a new discovery in [:location]! It's [a :description]. I'll call it the [:name]!"
+              - "Oh look! That [:description]! It's [a :name]. I haven't seen one in years."
           -
             tags:
               - ['tense', 'past']
@@ -49,6 +50,11 @@
               - "greater"
               - "lesser"
               - "common"
+
+          -
+            tags:
+              - ['environment', 'cold']
+            phrases:
               - "arctic"
               - "tundra"
       name:
@@ -126,65 +132,66 @@
               - []
             phrases:
               - "[:feature]"
-              - "[:feature] and [:feature]"
-              - "[:feature], [:feature], and [:feature]"
+              - "[:wings]"
+              - "[:weapon]"
+              - "[:wings] and [:weapon]"
+              - "[:wings] and [:feature]"
+              - "[:weapon] and [:feature]"
+              - "[:wings], [:weapon], and [:feature]"
       wings:
         groups:
           -
             tags:
-              - ['type', 'flighted']
+              - ['wings', 'wings']
             phrases:
               - "[#2-12] [:wingdescriptor] wings"
               - "many [:wingdescriptor] wings"
-      beak:
+          -
+            tags:
+              - ['wings', 'tentacles']
+            phrases:
+              - "[:weirdgerund] [:wingdescriptor] tentacles"
+      weirdgerund:
         groups:
           -
             tags:
               - []
             phrases:
-              - "[a :beakdescriptor] beak"
-      talons:
+              - "writhing"
+              - "squirming"
+              - "teeming"
+      weapon:
         groups:
           -
             tags:
-              - ['talons', 'talons']
+              - ['weapon', 'beak']
+            phrases:
+              - "[a :beakdescriptor] beak"
+          -
+            tags:
+              - ['weapon', 'talons']
             phrases:
               - "[:talondescriptor] talons"
-      claws:
-        groups:
           -
             tags:
-              - ['talons', 'talons']
+              - ['weapon', 'claws']
             phrases:
               - "[:talondescriptor] claws"
-      teeth:
-        groups:
           -
             tags:
-              - ['talons', 'talons']
+              - ['weapon', 'teeth']
             phrases:
               - "[:talondescriptor] teeth"
-      horns:
-        groups:
           -
             tags:
-              - ['talons', 'talons']
+              - ['weapon', 'horns']
             phrases:
               - "[:talondescriptor] horns"
-      tusks:
-        groups:
           -
             tags:
-              - ['talons', 'talons']
+              - ['weapon', 'tusks']
             phrases:
               - "[:talondescriptor] tusks"
-      call:
-        groups:
-          -
-            tags:
-              - ['sound', 'sound']
-            phrases:
-              - "[a :sounddescriptor] [:sound]"
       feature:
         groups:
           -
@@ -193,15 +200,7 @@
             phrases:
               - "no dignity"
               - "a piercing glare"
-      tentacles:
-        groups:
-          -
-            tags:
-              - ['tentacles', 'tentacles']
-              - ['weird', 'weird']
-            phrases:
-              - "writhing [:wingdescriptor] tentacles"
-
+              - "[a :sounddescriptor] [:sound]"
       sound:
         groups:
           -
@@ -290,10 +289,14 @@
               - "the forest"
               - "the jungle"
               - "the plains"
-              - "the tundra"
               - "the mountains"
               - "the hills"
               - "the seas"
+          -
+            tags:
+              - ['environment', 'cold']
+            phrases:
+              - "the tundra"
           -
             tags:
               - ['type', 'flighted']
