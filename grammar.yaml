@@ -4,21 +4,21 @@
             tags:
               - []
             phrases:
-              - "Have you heard of the [:name]? It [:is] [a :description]."
-              - "My favourite pet [:is] [a :name]. It [:is] [a :description]."
+              - "Have you heard of the [:name]? It [:is] [a :description]. [:hunt]"
+              - "My favourite pet [:is] [a :name]. It [:is] [a :description]. [:hunt]"
           -
-            tages:
+            tags:
               - ['tense', 'present']
             phrases:
-              - "I've made a new discovery in [:location]! It's [a :description]. I'll call it the [:name]!"
-              - "Oh look! That [:description]! It's [a :name]. I haven't seen one in years."
+              - "I've made a new discovery in [:location]! It's [a :description]. I'll call it the [:name]! [:hunt]"
+              - "Oh look! That [:description]! It's [a :name]. I haven't seen one in years. [:hunt]"
           -
             tags:
               - ['tense', 'past']
             phrases:
-              - "I once came across a most interesting bird. It [:is] [a :name], [a :description]."
-              - "I heard a legend of [a :description]. They say it still roams [:location]."
-              - "When I was young I swore I saw [a :description]. It haunts me to this day."
+              - "I once came across a most interesting bird. It [:is] [a :name], [a :description]. [:hunt]"
+              - "I heard a legend of [a :description]. They say it still roams [:location]. [:hunt]"
+              - "When I was young I swore I saw [a :description]. It haunts me to this day. [:hunt]"
       description:
         groups:
           -
@@ -111,7 +111,6 @@
             phrases:
               - "nocturnal"
               - "carnivorous"
-              - "extinct"
               - "delicious"
               - "almost useless"
               - "silly"
@@ -125,6 +124,7 @@
               - "scavenging"
               - "murderous"
               - "annoying"
+              - "vengeful"
       features:
         groups:
           -
@@ -160,6 +160,7 @@
               - "writhing"
               - "squirming"
               - "teeming"
+              - "twisting"
       weapon:
         groups:
           -
@@ -200,6 +201,8 @@
             phrases:
               - "no dignity"
               - "a piercing glare"
+              - "[a :sounddescriptor] [:sound]"
+              - "[a :sounddescriptor] [:sound]"
               - "[a :sounddescriptor] [:sound]"
       sound:
         groups:
@@ -284,21 +287,124 @@
         groups:
           -
             tags:
-              - []
+              - ['environment', 'forest']
             phrases:
               - "the forest"
-              - "the jungle"
-              - "the plains"
-              - "the mountains"
-              - "the hills"
-              - "the seas"
+              - "the woods"
           -
             tags:
-              - ['environment', 'cold']
+              - ['environment', 'jungle']
+            phrases:
+              - "the jungle"
+          -
+            tags:
+              - ['environment', 'plains']
+            phrases:
+              - "the plains"
+              - "the praries"
+          -
+            tags:
+              - ['environment', 'mountains']
+            phrases:
+              - "the mountains"
+          -
+            tags:
+              - ['environment', 'hills']
+            phrases:
+              - "the hills"
+              - "the foothills"
+          -
+            tags:
+              - ['environment', 'seas']
+            phrases:
+              - "the seas"
+              - "the oceans"
+              - "the river"
+              - "the lakes"
+          -
+            tags:
+              - ['environment', 'tundra']
             phrases:
               - "the tundra"
+              - "the north"
+              - "the frozen wastes"
+              - "the arctic"
           -
             tags:
               - ['type', 'flighted']
+              - ['environment', 'sky']
             phrases:
-              - "the sky"
+              - "the skies"
+          -
+            tags:
+              - []
+            phrases:
+              - "its environs"
+      hunt:
+        groups:
+          -
+            tags:
+              - ['conjugation','infinitive']
+            phrases:
+              - "It [:is] known to [:huntverb] [:prey] with its [:weapon]."
+          -
+            tags:
+              - ['conjugation','infinitive']
+              - ['tense','present']
+            phrases:
+              - "Beware the [:weapon] that it uses to [:huntverb] [:prey]."
+              - "In the wild it [:huntverb] [:prey] all over [:location]."
+          -
+            tags:
+              - ['conjugation','present']
+              - ['tense','present']
+            phrases:
+              - "At night it [:huntverb] [:prey] with its [:weapon]."
+          -
+            tags:
+              - []
+            phrases:
+              - " "
+      huntverb:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "hunt[:s]"
+              - "hunt[:s] down"
+              - "prey[:s]"
+              - "prey[:s] on"
+              - "feed[:s] on"
+              - "feast[:s] on"
+              - "gorge[:s] on"
+              - "eat[:s]"
+              - "chase[:s]"
+      s:
+        groups:
+          -
+            tags:
+              - ['conjugation','infinitive']
+            phrases:
+              - " "
+          -
+            tags:
+              - ['conjugation','present']
+            phrases:
+              - "s"
+      prey:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "the [:name]"
+              - "rodents"
+              - "smaller birds"
+              - "anything nearby"
+              - "worms"
+              - "berries"
+              - "roots"
+              - "seeds"
+              - "fish"
+              - "its rivals"

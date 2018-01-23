@@ -10,13 +10,17 @@ const grammarData = yaml.load(fs.read('grammar.yaml'));
   // Create a generator object from this data
 const generator = new Improv(grammarData, {
     filters: [Improv.filters.mismatchFilter(), Improv.filters.unmentioned()],
-    reincorporate: true,
-    binding: true
+    reincorporate: true
 });
 
 const model = {};
 // Generate text and print it out
-var bird = generator.gen('root', model);
+var bird = generator.gen('root', model).trim();
+bird = bird.replace("  ", " ");
+bird = bird.replace(" the an", " the");
+bird = bird.replace(" the a", " the");
+bird = bird.replace(" its an", " its");
+bird = bird.replace(" its a", " its");
 console.log(bird);
 
 
