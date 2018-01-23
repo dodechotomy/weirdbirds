@@ -17,10 +17,10 @@ const model = {};
 // Generate text and print it out
 var bird = generator.gen('root', model).trim();
 bird = bird.replace("  ", " ");
-bird = bird.replace(" the an", " the");
-bird = bird.replace(" the a", " the");
-bird = bird.replace(" its an", " its");
-bird = bird.replace(" its a", " its");
+bird = bird.replace(" the an ", " the ");
+bird = bird.replace(" the a ", " the ");
+bird = bird.replace(" its an ", " its ");
+bird = bird.replace(" its a ", " its ");
 console.log(bird);
 
 

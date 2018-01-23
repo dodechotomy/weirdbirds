@@ -10,14 +10,16 @@
             tags:
               - ['tense', 'present']
             phrases:
-              - "I've made a new discovery in [:location]! It's [a :description]. I'll call it the [:name]! [:hunt]"
+              - "I've made a new discovery [:location]! It's [a :description]. I'll call it the [:name]! [:hunt]"
               - "Oh look! That [:description]! It's [a :name]. I haven't seen one in years. [:hunt]"
+              - "I'm in need of [a :description]. Go! Find me [a :name]. "
+              - "This recipe calls for [a :description]. I hope [a :name] will be close enough. It's [a :description]."
           -
             tags:
               - ['tense', 'past']
             phrases:
               - "I once came across a most interesting bird. It [:is] [a :name], [a :description]. [:hunt]"
-              - "I heard a legend of [a :description]. They say it still roams [:location]. [:hunt]"
+              - "I heard a legend of [a :description]. They say it can still be seen [:location] to this day. [:hunt]"
               - "When I was young I swore I saw [a :description]. It haunts me to this day. [:hunt]"
       description:
         groups:
@@ -25,7 +27,7 @@
             tags:
               - []
             phrases:
-              - "[:descriptor] bird with [:features] found in [:location]"
+              - "[:descriptor] bird with [:features] found [:location]"
               - "[:descriptor] and [:descriptor] bird with [:features]"
               - "bird with [:features]"
       is:
@@ -146,6 +148,13 @@
             phrases:
               - "[#2-12] [:wingdescriptor] wings"
               - "many [:wingdescriptor] wings"
+          -
+            tags:
+              - ['wings', 'fins']
+              - ['type', 'aquatic']
+            phrases:
+              - "[#2-12] [:wingdescriptor] fins"
+              - "many [:wingdescriptor] fins"
           -
             tags:
               - ['wings', 'tentacles']
@@ -289,57 +298,95 @@
             tags:
               - ['environment', 'forest']
             phrases:
-              - "the forest"
-              - "the woods"
+              - "in the forest"
+              - "in the woods"
+          -
+            tags:
+              - ['environment', 'forest']
+              - ['type', 'flighted']
+            phrases:
+              - "flitting between the trees"
           -
             tags:
               - ['environment', 'jungle']
             phrases:
-              - "the jungle"
+              - "in the jungle"
+              - "in the rainforest"
+          -
+            tags:
+              - ['environment', 'jungle']
+              - ['type', 'flighted']
+            phrases:
+              - "in the canopies"
           -
             tags:
               - ['environment', 'plains']
             phrases:
-              - "the plains"
-              - "the praries"
+              - "in the plains"
+              - "in the praries"
+              - "in the great plains"
           -
             tags:
               - ['environment', 'mountains']
             phrases:
-              - "the mountains"
+              - "in the mountains"
+              - "in the snow-covered peaks"
+              - "in caves high up the mountains"
           -
             tags:
               - ['environment', 'hills']
             phrases:
-              - "the hills"
-              - "the foothills"
+              - "in the hills"
+              - "in the foothills"
+              - "in the rolling hills"
           -
             tags:
-              - ['environment', 'seas']
+              - ['environment', 'water']
+              - ['type', 'aquatic']
             phrases:
-              - "the seas"
-              - "the oceans"
-              - "the river"
-              - "the lakes"
+              - "in the seas"
+              - "swimming the oceans"
+          -
+            tags:
+              - ['environment', 'water']
+              - ['type', 'flighted']
+            phrases:
+              - "soaring over islands"
+              - "at the edge of lakes"
+          -
+            tags:
+              - ['environment', 'water']
+            phrases:
+              - "around rivers"
           -
             tags:
               - ['environment', 'tundra']
             phrases:
-              - "the tundra"
-              - "the north"
-              - "the frozen wastes"
-              - "the arctic"
+              - "in the tundra"
+              - "far north"
+              - "in the frozen wastes"
+              - "in the arctic"
           -
             tags:
               - ['type', 'flighted']
               - ['environment', 'sky']
             phrases:
-              - "the skies"
+              - "in the skies"
+              - "overhead"
           -
             tags:
               - []
             phrases:
-              - "its environs"
+              - "nearby"
+              - "just over that hill"
+              - "in lands lost to the ages"
+              - "near the great valley"
+              - "in distant lands"
+          -
+            tags:
+              - ['tense','present']
+            phrases:
+              - "right behind you"
       hunt:
         groups:
           -
@@ -352,14 +399,14 @@
               - ['conjugation','infinitive']
               - ['tense','present']
             phrases:
-              - "Beware the [:weapon] that it uses to [:huntverb] [:prey]."
-              - "In the wild it [:huntverb] [:prey] all over [:location]."
+              - "Beware the [:weapon] that it uses to [:huntverb] its prey, [:prey]."
           -
             tags:
               - ['conjugation','present']
               - ['tense','present']
             phrases:
               - "At night it [:huntverb] [:prey] with its [:weapon]."
+              - "In the wild it [:huntverb] [:prey] [:location]."
           -
             tags:
               - []
@@ -373,13 +420,17 @@
             phrases:
               - "hunt[:s]"
               - "hunt[:s] down"
-              - "prey[:s]"
               - "prey[:s] on"
+              - "chase[:s]"
+          -
+            tags:
+              - ['weapon','beak']
+              - ['weapon','teeth']
+            phrases:
               - "feed[:s] on"
               - "feast[:s] on"
               - "gorge[:s] on"
               - "eat[:s]"
-              - "chase[:s]"
       s:
         groups:
           -
