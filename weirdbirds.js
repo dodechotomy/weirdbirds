@@ -21,6 +21,7 @@ bird = bird.replace(" the an ", " the ");
 bird = bird.replace(" the a ", " the ");
 bird = bird.replace(" its an ", " its ");
 bird = bird.replace(" its a ", " its ");
+bird = bird.replace(" a u", " an u");
 console.log(bird);
 
 
