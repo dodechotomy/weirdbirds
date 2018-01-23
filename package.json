@@ -7,7 +7,7 @@
   },
   "main": "weirdbirds.js",
   "scripts": {
-    "start": "node weirdbirds.js"
+    "start": ""
   },
   "dependencies": {
     "fs-jetpack": "^1.2.0",

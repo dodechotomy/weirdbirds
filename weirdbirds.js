@@ -36,6 +36,6 @@ var config = {
 var client = new Twitter(config);
 client.post('statuses/update', {status: bird},  function(error, tweet, response) {
   if(error) throw error;
-  console.log(tweet);  // Tweet body.
-  console.log(response);  // Raw response object.
+  // console.log(tweet);  // Tweet body.
+  // console.log(response);  // Raw response object.
 });
