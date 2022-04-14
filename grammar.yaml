@@ -4,23 +4,28 @@
             tags:
               - []
             phrases:
-              - "Have you heard of the [:name]? It [:is] [a :description]. [:hunt]"
-              - "My favourite pet [:is] [a :name]. It [:is] [a :description]. [:hunt]"
+              - "Have you heard of the [:name]? It [:is] [a :description]. [cap :hunt]"
+              - "My favourite pet [:is] [a :name]. It [:is] [a :description]. [cap :hunt]"
+              - "The [:name]. [cap :hunt]"
+              - "The [:descriptor] [:name]. [cap :hunt]"
+              - "The [:descriptor] [:name]. [:exclamation]"
+              - "[:exclamation] [A :name]!"
+              - "[:exclamation] [A :description], it must be [a :name]!"
           -
             tags:
               - ['tense', 'present']
             phrases:
-              - "I've made a new discovery [:location]! It's [a :description]. I'll call it the [:name]! [:hunt]"
-              - "Oh look! That [:description]! It's [a :name]. I haven't seen one in years. [:hunt]"
+              - "I've made a new discovery [:location]! It's [a :description]. I'll call it the [:name]! [cap :hunt]"
+              - "[:exclamation] That [:description]! It's [a :name]. I haven't seen one in years. [cap :hunt]"
               - "I'm in need of [a :description]. Go! Find me [a :name]. "
-              - "This recipe calls for [a :description]. I hope [a :name] will be close enough. It's [a :description]."
+              - "This recipe calls for [a :description]. I hope [a :name] will be suffice."
           -
             tags:
               - ['tense', 'past']
             phrases:
-              - "I once came across a most interesting bird. It [:is] [a :name], [a :description]. [:hunt]"
-              - "I heard a legend of [a :description]. They say it can still be seen [:location] to this day. [:hunt]"
-              - "When I was young I swore I saw [a :description]. It haunts me to this day. [:hunt]"
+              - "I once came across a most interesting bird. It [:is] [a :name], [a :description]. [cap :hunt]"
+              - "I heard a legend of [a :description]. They say it can still be seen [:location] to this day. [cap :hunt]"
+              - "When I was young I swore I saw [a :description]. It haunts me to this day. [cap :hunt]"
       description:
         groups:
           -
@@ -28,7 +33,8 @@
               - []
             phrases:
               - "[:descriptor] bird with [:features] found [:location]"
-              - "[:descriptor] and [:descriptor] bird with [:features]"
+              - "[:descriptor] bird"
+              - "[:descriptor], [:descriptor] bird with [:features]"
               - "bird with [:features]"
       is:
         groups:
@@ -42,6 +48,44 @@
               - ['tense', 'present']
             phrases:
               - "is"
+          -
+            tags:
+              - []
+            phrases:
+              - "might be"
+      exclamation:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "Delicious!"
+              - "What a thrill!"
+              - "How rare!"
+              - "Wow!"
+          -
+            tags:
+              - ['demeanor','silly']
+            phrases:
+              - "What a dumb bird."
+          -
+            tags:
+              - ['demeanor','scary']
+            phrases:
+              - "What a fearsome bird!"
+              - "Perish the thought."
+          -
+            tags:
+              - ['demeanor','scary']
+              - ['tense','present']
+            phrases:
+              - "Run!"
+          -
+            tags:
+              - ['tense','present']
+            phrases:
+              - "Over there!"
+              - "Look!"
       prefix:
         groups:
           -
@@ -52,13 +96,15 @@
               - "greater"
               - "lesser"
               - "common"
-
           -
             tags:
               - ['environment', 'cold']
             phrases:
               - "arctic"
               - "tundra"
+              - "ice"
+              - "white"
+              - "snowy"
       name:
         groups:
           -
@@ -107,25 +153,35 @@
               - ['type', 'flightless']
             phrases:
               - "flightless"
+              - "walking"
+              - "running"
           -
             tags:
               - []
             phrases:
               - "nocturnal"
-              - "carnivorous"
               - "delicious"
-              - "almost useless"
-              - "silly"
-              - "pointless"
-              - "ridiculous"
-              - "fearsome"
-              - "viscious"
               - "respected"
               - "stealthy"
               - "silent"
               - "scavenging"
-              - "murderous"
+          -
+            tags:
+              - ['demeanor','silly']
+            phrases:
+              - "almost useless"
+              - "silly"
+              - "pointless"
+              - "ridiculous"
               - "annoying"
+          -
+            tags:
+              - ['demeanor','scary']
+            phrases:
+              - "carnivorous"
+              - "fearsome"
+              - "viscious"
+              - "murderous"
               - "vengeful"
       features:
         groups:
@@ -135,41 +191,40 @@
             phrases:
               - "[:feature]"
               - "[:wings]"
+              - "[:wings] and [:feature]"
+          -
+            tags:
+              - ['demeanor','scary']
+            phrases:
               - "[:weapon]"
               - "[:wings] and [:weapon]"
-              - "[:wings] and [:feature]"
               - "[:weapon] and [:feature]"
               - "[:wings], [:weapon], and [:feature]"
       wings:
         groups:
           -
             tags:
+              - []
+            phrases:
+              - "[:wingcount] [:wingdescriptor] [:wingtype]"
+      wingtype:
+        groups:
+          -
+            tags:
               - ['wings', 'wings']
             phrases:
-              - "[#2-12] [:wingdescriptor] wings"
-              - "many [:wingdescriptor] wings"
+              - "wings"
           -
             tags:
               - ['wings', 'fins']
               - ['type', 'aquatic']
             phrases:
-              - "[#2-12] [:wingdescriptor] fins"
-              - "many [:wingdescriptor] fins"
+              - "fins"
           -
             tags:
               - ['wings', 'tentacles']
             phrases:
-              - "[:weirdgerund] [:wingdescriptor] tentacles"
-      weirdgerund:
-        groups:
-          -
-            tags:
-              - []
-            phrases:
-              - "writhing"
-              - "squirming"
-              - "teeming"
-              - "twisting"
+              - "tentacles"
       weapon:
         groups:
           -
@@ -197,22 +252,38 @@
               - ['weapon', 'horns']
             phrases:
               - "[:talondescriptor] horns"
+              - "[:talondescriptor] antlers"
           -
             tags:
               - ['weapon', 'tusks']
             phrases:
               - "[:talondescriptor] tusks"
+          -
+            tags:
+              - ['weapon', 'tentacles']
+              - ['wings', 'tentacles']
+            phrases:
+              - "tentacles"
       feature:
         groups:
           -
             tags:
               - []
             phrases:
+              - "[a :sounddescriptor] [:sound]"
+          -
+            tags:
+              - ['demeanor','silly']
+            phrases:
               - "no dignity"
+              - "a foolish appearance"
+          -
+            tags:
+              - ['demeanor','scary']
+            phrases:
               - "a piercing glare"
-              - "[a :sounddescriptor] [:sound]"
-              - "[a :sounddescriptor] [:sound]"
-              - "[a :sounddescriptor] [:sound]"
+              - "a lust for blood"
+              - "a deadly reputation"
       sound:
         groups:
           -
@@ -224,6 +295,27 @@
               - "call"
               - "screech"
               - "warble"
+      sounddescriptor:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "sharp"
+              - "incessant"
+              - "loud"
+              - "quiet"
+              - "lovely"
+              - "peaceful"
+              - "piercing"
+              - "high pitched"
+              - "low pitched"
+              - "rumbling"
+              - "too human"
+              - "terrifying"
+              - "mimicking"
+              - "ungodly"
+              - "all too familiar"
       beakdescriptor:
         groups:
           -
@@ -249,27 +341,6 @@
               - "poisonous"
               - "venomous"
               - "bent"
-      sounddescriptor:
-        groups:
-          -
-            tags:
-              - []
-            phrases:
-              - "sharp"
-              - "incessant"
-              - "loud"
-              - "quiet"
-              - "lovely"
-              - "peaceful"
-              - "piercing"
-              - "high pitched"
-              - "low pitched"
-              - "rumbling"
-              - "too human"
-              - "terrifying"
-              - "mimicking"
-              - "ungodly"
-              - "all too familiar"
       wingdescriptor:
         groups:
           -
@@ -277,7 +348,6 @@
               - []
             phrases:
               - "enormous"
-              - "moist"
               - "irridescent"
               - "striped"
               - "dappled"
@@ -292,6 +362,33 @@
               - "green"
               - "grey"
               - "pink"
+              - "downy"
+          -
+            tags:
+              - ['type','aquatic']
+            phrases:
+              - "waterproof"
+              - "slimy"
+              - "damp"
+          -
+            tags:
+              - ['wings','tentacles']
+            phrases:
+              - "writhing"
+              - "squirming"
+              - "teeming"
+              - "twisting"
+              - "spined"
+              - "grasping"
+          -
+            tags:
+              - ['type', 'flightless']
+            phrases:
+              - "useless"
+              - "vestigial"
+              - "shriveled"
+              - "decorative"
+              - "small"
       location:
         groups:
           -
@@ -300,6 +397,8 @@
             phrases:
               - "in the forest"
               - "in the woods"
+              - "among the small trees"
+              - "in hollow trees"
           -
             tags:
               - ['environment', 'forest']
@@ -310,7 +409,6 @@
             tags:
               - ['environment', 'jungle']
             phrases:
-              - "in the jungle"
               - "in the rainforest"
           -
             tags:
@@ -346,6 +444,7 @@
             phrases:
               - "in the seas"
               - "swimming the oceans"
+              - "diving in the depths"
           -
             tags:
               - ['environment', 'water']
@@ -353,6 +452,8 @@
             phrases:
               - "soaring over islands"
               - "at the edge of lakes"
+              - "high above the seas"
+              - "circling above the beach"
           -
             tags:
               - ['environment', 'water']
@@ -373,6 +474,8 @@
             phrases:
               - "in the skies"
               - "overhead"
+              - "far above"
+              - "among the clouds"
           -
             tags:
               - []
@@ -382,55 +485,81 @@
               - "in lands lost to the ages"
               - "near the great valley"
               - "in distant lands"
-          -
-            tags:
-              - ['tense','present']
-            phrases:
-              - "right behind you"
       hunt:
         groups:
           -
             tags:
               - ['conjugation','infinitive']
             phrases:
-              - "It [:is] known to [:huntverb] [:prey] with its [:weapon]."
+              - "[:huntplace] [:is] known to [:huntverb] [:prey] with its [:weapon]."
+              - "[:huntplace] [:is] known to [:huntverb] [:prey]."
           -
             tags:
               - ['conjugation','infinitive']
               - ['tense','present']
             phrases:
-              - "Beware the [:weapon] that it uses to [:huntverb] its prey, [:prey]."
+              - "Beware the [:weapon] that it uses to [:huntverb] [:prey]."
+              - "Beware the [:weapon] that it uses to [:huntverb] [:prey]."
           -
             tags:
               - ['conjugation','present']
               - ['tense','present']
             phrases:
-              - "At night it [:huntverb] [:prey] with its [:weapon]."
-              - "In the wild it [:huntverb] [:prey] [:location]."
+              - "[:huntplace] [:huntverb] [:prey] with its [:weapon]."
+              - "[:huntplace] [:huntverb] [:prey]."
+              - "[:huntplace] [:huntverb] [:prey]."
+      huntplace:
+        groups:
           -
             tags:
               - []
             phrases:
-              - " "
+              - "It"
+              - "It"
+              - "It"
+              - "It"
+              - "At night it"
+              - "In the wild it"
+              - "When hungry it"
+          -
+            tags:
+              - ['environment', 'water']
+            phrases:
+              - "In dark waters it"
+              - "In clear waters it"
+              - "At low tide it"
+              - "At high tide it"
       huntverb:
         groups:
           -
             tags:
               - []
             phrases:
+              - "seek[:s]"
+              - "eat[:s]"
+          -
+            tags:
+              - ['preytype','mobile']
+            phrases:
               - "hunt[:s]"
-              - "hunt[:s] down"
-              - "prey[:s] on"
               - "chase[:s]"
           -
             tags:
-              - ['weapon','beak']
-              - ['weapon','teeth']
+              - ['environment', 'water']
+            phrases:
+              - "dive[:s] for"
+          -
+            tags:
+              - []
             phrases:
               - "feed[:s] on"
               - "feast[:s] on"
               - "gorge[:s] on"
-              - "eat[:s]"
+          -
+            tags:
+              - ['preytype','mobile']
+            phrases:
+              - "prey[:s] on"
       s:
         groups:
           -
@@ -449,13 +578,82 @@
             tags:
               - []
             phrases:
-              - "the [:name]"
+              - "anything nearby"
+              - "whatever it can"
+          -
+            tags:
+              - ['preytype','mobile']
+            phrases:
               - "rodents"
               - "smaller birds"
-              - "anything nearby"
               - "worms"
-              - "berries"
+              - "insects"
+              - "anything that moves"
+          -
+            tags:
+              - ['preytype','immobile']
+            phrases:
+              - "the air itself"
+              - "sunshine alone"
+              - "flowers"
+              - "mushrooms"
+          -
+            tags:
+              - ['preytype','immobile']
+              - ['enviroment','forest']
+            phrases:
+              - "lichen"
+              - "moss"
+          -
+            tags:
+              - ['preytype','immobile']
+              - ['enviroment','forest']
+              - ['enviroment','jungle']
+            phrases:
               - "roots"
               - "seeds"
+              - "leaves"
+              - "whole trees"
+              - "nuts"
+              - "fruits"
+              - "berries"
+          -
+            tags:
+              - ['preytype','immobile']
+              - ['enviroment','jungle']
+            phrases:
+              - "orchids"
+          -
+            tags:
+              - ['environment', 'water']
+              - ['preytype','mobile']
+            phrases:
               - "fish"
-              - "its rivals"
+              - "crayfish"
+              - "lobsters"
+              - "crabs"
+              - "shrimp"
+          -
+            tags:
+              - ['environment', 'water']
+              - ['preytype','immobile']
+            phrases:
+              - "abalone"
+              - "plankton"
+              - "mussels"
+              - "oysters"
+              - "clams"
+      wingcount:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "two"
+              - "four"
+              - "six"
+              - "eight"
+              - "ten"
+              - "many"
+              - "uncountable"
+              - "myriad"
