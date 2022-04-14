@@ -50,7 +50,9 @@ if (!process.env.hasOwnProperty("consumerKey")) {
     access_token_secret: process.env.accessTokenSecret
   };
   var client = new Twitter(config);
-  client.post('statuses/update', { status: generateBird() }, function (error, tweet, response) {
+  var bird = generateBird()
+  console.log(bird);
+  client.post('statuses/update', { status: bird}, function (error, tweet, response) {
     if (error) throw error;
     // console.log(tweet);  // Tweet body.
     // console.log(response);  // Raw response object.
