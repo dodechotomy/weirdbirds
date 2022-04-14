@@ -10,21 +10,34 @@
               - "The [:descriptor] [:name]. [cap :hunt]"
               - "The [:descriptor] [:name]. [:exclamation]"
               - "[:exclamation] [A :name]!"
+              - "[A :name]! [:exclamation]"
               - "[:exclamation] [A :description], it must be [a :name]!"
+              - "[:exclamation] [A :description], I think it's [a :name]?"
+              - "I once read of [a :name], described as [a :description]."
+              - "This book describes [a :description], known as [a :name]."
           -
             tags:
               - ['tense', 'present']
             phrases:
               - "I've made a new discovery [:location]! It's [a :description]. I'll call it the [:name]! [cap :hunt]"
               - "[:exclamation] That [:description]! It's [a :name]. I haven't seen one in years. [cap :hunt]"
+              - "[:exclamation] It's [a :name]. I thought they were extinct."
               - "I'm in need of [a :description]. Go! Find me [a :name]. "
               - "This recipe calls for [a :description]. I hope [a :name] will suffice."
+              - "Rumour has it [a :name] lives nearby, be on the lookout for [a :description]."
           -
             tags:
               - ['tense', 'past']
             phrases:
               - "I once came across a most interesting bird. It [:is] [a :name], [a :description]. [cap :hunt]"
               - "I heard a legend of [a :description]. They say it can still be seen [:location] to this day. [cap :hunt]"
+              - "I heard a legend of [a :name]. They say [:hunt]"
+              - "There used to be [:name] in this area. They were a sort of [:description]."
+          -
+            tags:
+              - ['tense', 'past']
+              - ['demeanor','scary']
+            phrases:
               - "When I was young I swore I saw [a :description]. It haunts me to this day. [cap :hunt]"
       description:
         groups:
@@ -33,6 +46,7 @@
               - []
             phrases:
               - "[:descriptor] bird with [:features] found [:location]"
+              - "[:descriptor] bird with [:features]"
               - "[:descriptor] bird"
               - "[:descriptor], [:descriptor] bird with [:features]"
               - "bird with [:features]"
@@ -52,7 +66,7 @@
             tags:
               - []
             phrases:
-              - "might be"
+              - "is"
       exclamation:
         groups:
           -
@@ -60,14 +74,19 @@
               - []
             phrases:
               - "Delicious!"
+              - "Listen carefully!"
               - "What a thrill!"
               - "How rare!"
+              - "What luck!"
               - "Wow!"
+              - "Stay very still!"
+              - "Whatever is it doing here?"
           -
             tags:
               - ['demeanor','silly']
             phrases:
               - "What a dumb bird."
+              - "Poor thing…"
           -
             tags:
               - ['demeanor','scary']
@@ -80,6 +99,7 @@
               - ['tense','present']
             phrases:
               - "Run!"
+              - "Duck!"
           -
             tags:
               - ['tense','present']
@@ -96,6 +116,13 @@
               - "greater"
               - "lesser"
               - "common"
+              - "long-[:prefixBodyPart]"
+              - "short-[:prefixBodyPart]"
+              - "[:prefixBodyPart]"
+              - "[:colour]-[:prefixBodyPart]"
+              - "[:colour]"
+              - "[:colour]"
+              - "[:colour]"
           -
             tags:
               - ['environment', 'cold']
@@ -105,15 +132,86 @@
               - "ice"
               - "white"
               - "snowy"
+          -
+            tags:
+              - ['environment', 'aquatic']
+              - ['type', 'flighted']
+            phrases:
+              - "diving"
+              - "water"
+              - "sea"
+              - "lake"
+      prefixBodyPart:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "tailed"
+              - "feathered"
+          -
+            tags:
+              - ['weapon', 'beak']
+            phrases:
+              - "beaked"
+              - "billed"
+          -
+            tags:
+              - ['wings', 'wings']
+            phrases:
+              - "winged"
+          -
+            tags:
+              - ['wings', 'fins']
+            phrases:
+              - "finned"
+          -
+            tags:
+              - ['weapon', 'claws']
+            phrases:
+              - "clawed"
+          -
+            tags:
+              - ['weapon', 'tusks']
+            phrases:
+              - "tusked"
+          -
+            tags:
+              - ['weapon', 'horns']
+            phrases:
+              - "horned"
+          -
+            tags:
+              - ['weapon', 'tentacles']
+              - ['wings', 'tentacles']
+            phrases:
+              - "tentacled"
+          -
+            tags:
+              - ['weapon', 'teeth']
+            phrases:
+              - "toothed"
+              - "fanged"
       name:
         groups:
           -
             tags:
               - []
             phrases:
-              - "[cap :prefix] [cap :namepart][:namepart][:namepart]"
-              - "[cap :prefix] [cap :namepart][:namepart]"
-      namepart:
+              - "[cap :prefix] [cap :namePhrase]"
+              - "[cap :namePhrase]"
+              - "[cap :namePhrase]"
+      namePhrase:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "[:shortnamePart][:shortnamePart][:shortnamePart]"
+              - "[:shortnamePart][:shortnamePart][:longnamePart]"
+              - "[:shortnamePart][:longnamePart]"
+              - "[:shortnamePart][:shortnamePart]"
+      shortnamePart:
         groups:
           -
             tags:
@@ -121,23 +219,19 @@
             phrases:
               - "ox"
               - "cor"
-              - "waz"
               - "fin"
-              - "tit"
-              - "woop"
-              - "whip"
-              - "roc"
               - "par"
+              - "rot"
               - "ki"
               - "wi"
               - "ka"
               - "pec"
               - "ker"
               - "her"
-              - "rigar"
               - "bud"
               - "gi"
-              - "geon"
+              - "gy"
+              - "gid"
               - "row"
               - "spar"
               - "hum"
@@ -146,6 +240,69 @@
               - "ra"
               - "do"
               - "pid"
+              - "ter"
+              - "mag"
+              - "pie"
+              - "jay"
+              - "ra"
+              - "ven"
+              - "al"
+              - "ba"
+              - "bru"
+              - "star"
+              - "ling"
+          -
+            tags:
+              - ['demeanor', 'silly']
+            phrases:
+              - "tit"
+              - "woop"
+              - "whip"
+              - "waz"
+          -
+            tags:
+              - ['demeanor', 'scary']
+            phrases:
+              - "rap"
+              - "tor"
+              - "roc"
+              - "gyr"
+      longnamePart:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "geon"
+              - "wood"
+              - "finch"
+              - "lark"
+              - "tern"
+              - "tross"
+              - "hawk"
+              - "duck"
+              - "fowl"
+              - "bird"
+              - "owl"
+              - "snipe"
+          -
+            tags:
+              - ['demeanor', 'silly']
+            phrases:
+              - "rigar"
+              - "thrush"
+          -
+            tags:
+              - ['environment', 'aquatic']
+            phrases:
+              - "fisher"
+          -
+            tags:
+              - ['demeanor', 'scary']
+            phrases:
+              - "shrike"
+              - "eagle"
+              - "falcon"
       descriptor:
         groups:
           -
@@ -153,8 +310,6 @@
               - ['type', 'flightless']
             phrases:
               - "flightless"
-              - "walking"
-              - "running"
           -
             tags:
               - []
@@ -169,11 +324,13 @@
             tags:
               - ['demeanor','silly']
             phrases:
-              - "almost useless"
+              - "pitiable"
               - "silly"
               - "pointless"
               - "ridiculous"
               - "annoying"
+              - "risible"
+              - "waddling"
           -
             tags:
               - ['demeanor','scary']
@@ -204,7 +361,22 @@
         groups:
           -
             tags:
-              - []
+              - ['wings', 'wings']
+            phrases:
+              - "[:wingtype]"
+              - "[:wingdescriptor] [:wingtype]"
+              - "[:wingcount] [:wingtype]"
+              - "[:wingcount] [:wingdescriptor] [:wingtype]"
+              - "[:wingcount] [:wingdescriptor] [:wingtype]"
+          -
+            tags:
+              - ['wings', 'fins']
+              - ['type', 'aquatic']
+            phrases:
+              - "[:wingcount] [:wingdescriptor] [:wingtype]"
+          -
+            tags:
+              - ['wings', 'tentacles']
             phrases:
               - "[:wingcount] [:wingdescriptor] [:wingtype]"
       wingtype:
@@ -220,6 +392,7 @@
               - ['type', 'aquatic']
             phrases:
               - "fins"
+              - "flippers"
           -
             tags:
               - ['wings', 'tentacles']
@@ -231,33 +404,31 @@
             tags:
               - ['weapon', 'beak']
             phrases:
-              - "[a :beakdescriptor] beak"
-          -
-            tags:
-              - ['weapon', 'talons']
-            phrases:
-              - "[:talondescriptor] talons"
+              - "[a :weapondescriptor] beak"
+              - "[a :weapondescriptor] bill"
           -
             tags:
               - ['weapon', 'claws']
             phrases:
-              - "[:talondescriptor] claws"
+              - "[:weapondescriptor] claws"
+              - "[:weapondescriptor] talons"
           -
             tags:
               - ['weapon', 'teeth']
             phrases:
-              - "[:talondescriptor] teeth"
+              - "[:weapondescriptor] teeth"
+              - "[:weapondescriptor] fangs"
           -
             tags:
               - ['weapon', 'horns']
             phrases:
-              - "[:talondescriptor] horns"
-              - "[:talondescriptor] antlers"
+              - "[:weapondescriptor] horns"
+              - "[:weapondescriptor] antlers"
           -
             tags:
               - ['weapon', 'tusks']
             phrases:
-              - "[:talondescriptor] tusks"
+              - "[:weapondescriptor] tusks"
           -
             tags:
               - ['weapon', 'tentacles']
@@ -293,8 +464,22 @@
               - "song"
               - "cry"
               - "call"
-              - "screech"
+              - "chirp"
+              - "trill"
+          -
+            tags:
+              - ['demeanor','silly']
+            phrases:
+              - "honk"
               - "warble"
+              - "tweet"
+              - "twitter"
+          -
+            tags:
+              - ['demeanor','scary']
+            phrases:
+              - "screech"
+              - "caw"
       sounddescriptor:
         groups:
           -
@@ -305,26 +490,33 @@
               - "incessant"
               - "loud"
               - "quiet"
+              - "echoing"
               - "lovely"
               - "peaceful"
-              - "piercing"
               - "high pitched"
               - "low pitched"
               - "rumbling"
-              - "too human"
-              - "terrifying"
               - "mimicking"
-              - "ungodly"
               - "all too familiar"
-      beakdescriptor:
-        groups:
+              - "rolling"
+              - "lilting"
           -
             tags:
-              - []
+              - ['demeanor','silly']
             phrases:
-              - "hooked"
-              - "[:talondescriptor]"
-      talondescriptor:
+              - "goofy"
+              - "silly"
+              - "yodel-like"
+              - "goofy"
+          -
+            tags:
+              - ['demeanor','scary']
+            phrases:
+              - "piercing"
+              - "terrifying"
+              - "ungodly"
+              - "too human"
+      weapondescriptor:
         groups:
           -
             tags:
@@ -347,21 +539,18 @@
               - []
             phrases:
               - "enormous"
-              - "irridescent"
-              - "striped"
-              - "dappled"
-              - "spotted"
-              - "black"
-              - "white"
-              - "orange"
-              - "purple"
-              - "blue"
-              - "red"
-              - "multicoloured"
-              - "green"
-              - "grey"
-              - "pink"
               - "downy"
+              - "decorated"
+              - "intricate"
+              - "ornate"
+              - "beautiful"
+              - "finely detailed"
+              - "diaphanous"
+              - "[:colour]"
+              - "[:colour]"
+              - "[:colour]"
+              - "[:colour]"
+              - "[:colour]"
           -
             tags:
               - ['type','aquatic']
@@ -375,10 +564,10 @@
             phrases:
               - "writhing"
               - "squirming"
-              - "teeming"
               - "twisting"
               - "spined"
               - "grasping"
+              - "suckered"
           -
             tags:
               - ['type', 'flightless']
@@ -488,46 +677,48 @@
         groups:
           -
             tags:
+              - []
+            phrases:
+              - "it [:huntverb] [:prey] with its [:weapon]."
+              - "it [:huntverb] [:prey]."
+          -
+            tags:
               - ['conjugation','infinitive']
             phrases:
-              - "[:huntplace] [:is] known to [:huntverb] [:prey] with its [:weapon]."
-              - "[:huntplace] [:is] known to [:huntverb] [:prey]."
+              - "[:huntplace] it [:is] known to [:huntverb] [:prey] with its [:weapon]."
+              - "[:huntplace] it [:is] known to [:huntverb] [:prey]."
           -
             tags:
               - ['conjugation','infinitive']
               - ['tense','present']
             phrases:
-              - "Beware the [:weapon] that it uses to [:huntverb] [:prey]."
-              - "Beware the [:weapon] that it uses to [:huntverb] [:prey]."
+              - "beware the [:weapon] that it uses to [:huntverb] [:prey]."
+              - "beware the [:weapon] that it uses to [:huntverb] [:prey]."
           -
             tags:
               - ['conjugation','present']
               - ['tense','present']
             phrases:
-              - "[:huntplace] [:huntverb] [:prey] with its [:weapon]."
-              - "[:huntplace] [:huntverb] [:prey]."
-              - "[:huntplace] [:huntverb] [:prey]."
+              - "[:huntplace] it [:huntverb] [:prey] with its [:weapon]."
+              - "[:huntplace] it [:huntverb] [:prey]."
+              - "[:huntplace] it [:huntverb] [:prey]."
       huntplace:
         groups:
           -
             tags:
               - []
             phrases:
-              - "It"
-              - "It"
-              - "It"
-              - "It"
-              - "At night it"
-              - "In the wild it"
-              - "When hungry it"
+              - "at night"
+              - "in the wild"
+              - "when hungry"
           -
             tags:
               - ['environment', 'water']
             phrases:
-              - "In dark waters it"
-              - "In clear waters it"
-              - "At low tide it"
-              - "At high tide it"
+              - "in dark waters"
+              - "in clear waters"
+              - "at low tide"
+              - "at high tide"
       huntverb:
         groups:
           -
@@ -539,9 +730,11 @@
           -
             tags:
               - ['preytype','mobile']
+              - ['demeanor','scary']
             phrases:
               - "hunt[:s]"
               - "chase[:s]"
+              - "prey[:s] on"
           -
             tags:
               - ['environment', 'water']
@@ -554,11 +747,6 @@
               - "feed[:s] on"
               - "feast[:s] on"
               - "gorge[:s] on"
-          -
-            tags:
-              - ['preytype','mobile']
-            phrases:
-              - "prey[:s] on"
       s:
         groups:
           -
@@ -581,12 +769,19 @@
               - "whatever it can"
           -
             tags:
+              - ['demeanor', 'silly']
+            phrases:
+              - "rocks"
+          -
+            tags:
               - ['preytype','mobile']
             phrases:
               - "rodents"
               - "smaller birds"
+              - "small animals"
               - "worms"
               - "insects"
+              - "bugs"
               - "anything that moves"
           -
             tags:
@@ -618,10 +813,18 @@
               - "berries"
           -
             tags:
+              - ['preytype','mobile']
+              - ['enviroment','forest']
+              - ['enviroment','jungle']
+            phrases:
+              - "snakes"
+          -
+            tags:
               - ['preytype','immobile']
               - ['enviroment','jungle']
             phrases:
               - "orchids"
+              - "mud"
           -
             tags:
               - ['environment', 'water']
@@ -656,3 +859,39 @@
               - "many"
               - "uncountable"
               - "myriad"
+      colour:
+        groups:
+          -
+            tags:
+              - []
+            phrases:
+              - "irridescent"
+              - "striped"
+              - "dappled"
+              - "spotted"
+              - "black"
+              - "white"
+              - "orange"
+              - "purple"
+              - "blue"
+              - "red"
+              - "multicoloured"
+              - "variegated"
+              - "green"
+              - "grey"
+              - "pink"
+              - "marooon"
+              - "silver"
+              - "golden"
+              - "cerulean"
+              - "lavender"
+              - "slate"
+              - "azure"
+              - "turquoise"
+              - "teal"
+              - "jade"
+              - "burgundy"
+              - "vivid"
+              - "indigo"
+              - "violet"
+              - "crimson"
