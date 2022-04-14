@@ -18,7 +18,7 @@
               - "I've made a new discovery [:location]! It's [a :description]. I'll call it the [:name]! [cap :hunt]"
               - "[:exclamation] That [:description]! It's [a :name]. I haven't seen one in years. [cap :hunt]"
               - "I'm in need of [a :description]. Go! Find me [a :name]. "
-              - "This recipe calls for [a :description]. I hope [a :name] will be suffice."
+              - "This recipe calls for [a :description]. I hope [a :name] will suffice."
           -
             tags:
               - ['tense', 'past']
