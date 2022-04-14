@@ -324,7 +324,6 @@
             phrases:
               - "hooked"
               - "[:talondescriptor]"
-              - "[:wingdescriptor]"
       talondescriptor:
         groups:
           -
